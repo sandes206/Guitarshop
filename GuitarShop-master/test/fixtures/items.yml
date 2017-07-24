@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uniqueID: 1
+  make: MyString
+  model: MyString
+  quantity: 1
+  color: MyString
+  sellingPrice: 1
+  condition: MyString
+  rackNo: 1
+
+two:
+  uniqueID: 1
+  make: MyString
+  model: MyString
+  quantity: 1
+  color: MyString
+  sellingPrice: 1
+  condition: MyString
+  rackNo: 1

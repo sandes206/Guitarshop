@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sandesh Parsai Guitar Shop</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="wrapper">
+<% if user_signed_in? %>
+  <div id='cssmenu'>
+    <ul>
+      <li class='active'><%= link_to 'Home', items_path %></li>
+      <li><%= link_to 'Add Item', new_item_path %></li>
+      <li><%= link_to "Set Order", :controller => "orders", :action => "new" %></li>
+      <li><%= link_to "View Orders", :controller => "orders", :action => "index" %></li>
+      <li class="search">
+        <%= form_for :search,url: '/search'  do |f| %>
+        <%= f.text_field :search_query %>
+        <%= f.submit 'Search' %>
+    <% end %>
+      </li>
+      <li class="signout"> 
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete%>
+      </li>
+    </ul>
+  </div><hr>
+<% elsif %>
+  <header>
+    <h1>
+      Sandesh Prasai Guitar Shop
+    </h1>
+  </header>
+<% end %>
+  <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+</div>
+  
+</body>
+</html>
